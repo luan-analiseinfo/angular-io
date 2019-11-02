@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {GiphySearchManualModule} from './giphy/giphy-search-manual/giphy-search-manual.module';
 import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from "@angular/common/http";
+import {GiphySearchListModule} from "./giphy-search-list/giphy-search-list.module";
+
 
 
 @NgModule({
@@ -14,6 +17,7 @@ import {FormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     AppRoutingModule,
     GiphySearchManualModule
   ],

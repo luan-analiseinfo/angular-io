@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {GiphySearchManualService} from '../giphy-search-manual.service';
 
 @Component({
   selector: 'giphy-search-manual',
@@ -6,9 +7,21 @@ import {Component, OnInit} from '@angular/core';
 })
 
 export class GiphySearchManualComponent implements OnInit {
-  constructor() {
+
+  gifs: any[] = [];
+  term: string;
+  limit: string;
+
+  constructor(private giphySearchService: GiphySearchManualService) {
   }
 
   ngOnInit() {
   }
+
+
+  pesquisarGiphy() {
+    this.giphySearchService.pesquisarGiphy(this.limit, this.term)
+      .subscribe(res => this.gifs = res.data);
+  }
+
 }

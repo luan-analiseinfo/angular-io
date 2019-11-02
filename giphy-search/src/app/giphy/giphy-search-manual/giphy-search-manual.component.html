@@ -6,10 +6,14 @@
 </head>
 <body>
 
-Limit <input type="number"/>
-Term <input type="text" name="term" id="term">
+Limit <input type="number" [(ngModel)]="limit"/>
+Term <input type="text" [(ngModel)]="term" name="term" id="term">
 
-<input type="button" value="Pesquisar">
+<input type="button" value="Pesquisar"  (click)="pesquisarGiphy()"/>
+
+<app-giphy-search-list [list]="gifs"></app-giphy-search-list>
+
+
 
 </body>
 </html>
